@@ -7,20 +7,20 @@ import main.java.movieRating.repository.MovieRepository;
 import main.java.movieRating.repository.RatingRepository;
 import main.java.movieRating.utils.comparators.MovieRatingQuantityDescComparator;
 import main.java.movieRating.utils.enums.OptionType;
-import main.java.movieRating.views.MainWindow;
+import main.java.movieRating.views.manual.MainFrame;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.io.IOException;
-import java.util.List;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class MainController {
+public class ManualMainController {
     private CSVFileReaderObserver fileReaderObserver;
-    private MainWindow mainWindow;
+    private MainFrame mainFrame;
     private MovieRepository movieRepository;
     private RatingRepository ratingRepository;
 
@@ -32,34 +32,34 @@ public class MainController {
     private final String readingMessage = "Se cargarán las películas y sus puntuaciones. Por favor, espere.";
     private final String errorSelectMessage = "Lo sentimos, no hay puntuaciones para la película seleccionada.";
 
-    public MainController() {
-        mainWindow = new MainWindow();
+    public ManualMainController() {
+        mainFrame = new MainFrame();
         movieRepository = MovieRepository.getInstance();
         ratingRepository = RatingRepository.getInstance();
-        fileReaderObserver = new CSVFileReaderObserver(mainWindow.getProgressBar());
+        fileReaderObserver = new CSVFileReaderObserver(mainFrame.getProgressBar());
         addBtnListener();
     }
 
     private void addBtnListener() {
-        mainWindow.addActionListenerToButton(e -> {
+        mainFrame.addActionListenerToButton(e -> {
             enableUIWindow();
-            JOptionPane.showMessageDialog(mainWindow, readingMessage);
+            JOptionPane.showMessageDialog(mainFrame, readingMessage);
             try {
                 loadMovieData();
                 loadRatingData();
             } catch (IOException error) {
-                JOptionPane.showMessageDialog(mainWindow, errorReadingMessage + "\n" + error.getMessage());
+                JOptionPane.showMessageDialog(mainFrame, errorReadingMessage + "\n" + error.getMessage());
             }
             addSelectListener();
             addSelectRowListener();
             setCantLabels();
             paintData(OptionType.TODOS.getValue());
-            mainWindow.setCursor(Cursor.getDefaultCursor());
+            mainFrame.setCursor(Cursor.getDefaultCursor());
         });
     }
 
     private void addSelectRowListener() {
-        JTable tbMovies = mainWindow.getTable();
+        JTable tbMovies = mainFrame.getTable();
         tbMovies.getSelectionModel().addListSelectionListener(
                 event -> {
                     if (event.getValueIsAdjusting()) {
@@ -73,9 +73,9 @@ public class MainController {
                             );
                             Movie selectedMovie = movieMap.get(selectedMovieId);
                             if (selectedMovie.getRatingQuantity() > 0)
-                                mainWindow.setChart(selectedMovie.getTitle(), getRatingsByMovie(selectedMovie));
+                                mainFrame.setChart(selectedMovie.getTitle(), getRatingsByMovie(selectedMovie));
                             else
-                                JOptionPane.showMessageDialog(mainWindow, errorSelectMessage, "Error", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(mainFrame, errorSelectMessage, "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
                 }
@@ -83,7 +83,7 @@ public class MainController {
     }
 
     private void addSelectListener() {
-        mainWindow.addItemListenerToComboBox(e -> {
+        mainFrame.addItemListenerToComboBox(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 OptionType option = (OptionType) e.getItem();
                 paintData(option.getValue());
@@ -109,15 +109,15 @@ public class MainController {
     }
 
     private void enableUIWindow() {
-        mainWindow.disableButton();
-        mainWindow.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        mainWindow.enableComboBox();
+        mainFrame.disableButton();
+        mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        mainFrame.enableComboBox();
     }
 
     private void setCantLabels() {
-        mainWindow.setCantText(mainWindow.getLblMovies(), Integer.toString(movieMap.size()));
-        mainWindow.setCantText(mainWindow.getLblVotes(), Integer.toString(ratingIdSet.size()));
-        mainWindow.setCantText(mainWindow.getLblUsers(), Integer.toString(usersIdSet.size()));
+        mainFrame.setCantText(mainFrame.getLblMovies(), Integer.toString(movieMap.size()));
+        mainFrame.setCantText(mainFrame.getLblVotes(), Integer.toString(ratingIdSet.size()));
+        mainFrame.setCantText(mainFrame.getLblUsers(), Integer.toString(usersIdSet.size()));
     }
 
     private double[] getAllRatings(int quantity) {
@@ -148,11 +148,12 @@ public class MainController {
     }
 
     private void paintDataOnTheChart(int quantity) {
-        mainWindow.setChart(getAllRatings(quantity));
+        mainFrame.setChart(getAllRatings(quantity));
     }
 
     private void paintDataOnTheTable(int quantity) {
-        DefaultTableModel tbModel = (DefaultTableModel) mainWindow.getTable().getModel();;
+        JTable tbMovies = mainFrame.getTable();
+        DefaultTableModel tbModel = (DefaultTableModel) tbMovies.getModel();;
         tbModel.getDataVector().removeAllElements();
         final Map<Integer, Movie> sortedByRatingQuantity = movieMap.entrySet()
                 .stream()
@@ -171,10 +172,10 @@ public class MainController {
             };
             tbModel.addRow(data);
         }
-        mainWindow.getTable().setModel(tbModel);
+        tbMovies.setModel(tbModel);
     }
 
     public static void main(String[] args) {
-        new MainController();
+        new ManualMainController();
     }
 }
