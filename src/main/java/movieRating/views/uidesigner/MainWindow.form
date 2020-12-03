@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.java.movieRating.views.MainWindow">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.java.movieRating.views.uidesigner.MainWindow">
   <grid id="27dc6" binding="jpMain" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="5">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
@@ -12,7 +12,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <nested-form id="9f520" form-file="main/java/movieRating/views/HeaderComponent.form" binding="headerContainer">
+      <nested-form id="9f520" form-file="main/java/movieRating/views/uidesigner/HeaderComponent.form" binding="headerContainer">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="55"/>
@@ -34,24 +34,24 @@
         </properties>
         <border type="line"/>
         <children>
-          <nested-form id="a36d9" form-file="main/java/movieRating/views/LabelComponent.form" binding="lblMovies" custom-create="true">
+          <nested-form id="a36d9" form-file="main/java/movieRating/views/uidesigner/LabelComponent.form" binding="lblMovies" custom-create="true">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
           </nested-form>
-          <nested-form id="f3fa7" form-file="main/java/movieRating/views/LabelComponent.form" binding="lblVotes" custom-create="true">
+          <nested-form id="f3fa7" form-file="main/java/movieRating/views/uidesigner/LabelComponent.form" binding="lblVotes" custom-create="true">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
           </nested-form>
-          <nested-form id="d9d77" form-file="main/java/movieRating/views/LabelComponent.form" binding="lblUsers" custom-create="true">
+          <nested-form id="d9d77" form-file="main/java/movieRating/views/uidesigner/LabelComponent.form" binding="lblUsers" custom-create="true">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
           </nested-form>
         </children>
       </grid>
-      <nested-form id="48751" form-file="main/java/movieRating/views/SelectorComponent.form" binding="selectContainer">
+      <nested-form id="48751" form-file="main/java/movieRating/views/uidesigner/SelectorComponent.form" binding="selectContainer">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="35"/>
@@ -60,14 +60,14 @@
           </grid>
         </constraints>
       </nested-form>
-      <nested-form id="4cced" form-file="main/java/movieRating/views/TableComponent.form" binding="tbContainer">
+      <nested-form id="4cced" form-file="main/java/movieRating/views/uidesigner/TableComponent.form" binding="tbContainer">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="160"/>
           </grid>
         </constraints>
       </nested-form>
-      <nested-form id="45f64" form-file="main/java/movieRating/views/ChartComponent.form" binding="chartContainer">
+      <nested-form id="45f64" form-file="main/java/movieRating/views/uidesigner/ChartComponent.form" binding="chartContainer">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="-1" height="275"/>

@@ -1,4 +1,4 @@
-package main.java.movieRating.views;
+package main.java.movieRating.views.uidesigner;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -42,7 +42,7 @@ public class MainWindow extends JFrame {
         setVisible(true);
     }
 
-    private void initLookAndFeel() {
+    public static void initLookAndFeel() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {

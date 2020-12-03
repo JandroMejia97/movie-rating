@@ -1,6 +1,6 @@
 package main.java.movieRating.views.manual;
 
-import main.java.movieRating.views.MainWindow;
+import main.java.movieRating.views.uidesigner.MainWindow;
 import org.jfree.ui.tabbedui.VerticalLayout;
 
 import javax.swing.*;
@@ -60,7 +60,7 @@ public class MainFrame extends JFrame  {
         jpMain.setLayout(new VerticalLayout());
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setResizable(false);
+        setResizable(false);
     }
 
     private void addComponents() {

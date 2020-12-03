@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import org.jfree.ui.tabbedui.VerticalLayout;
 
 public class HeaderPanel extends PanelComponent {
+    private JPanel jpTitle;
     private JLabel lblTitle;
     private JButton btnProcesar;
     private JProgressBar pbProgreso;
@@ -51,6 +52,7 @@ public class HeaderPanel extends PanelComponent {
     
     @Override
     protected void initComponents() {
+        jpTitle = new JPanel();
         lblTitle = new JLabel(headerText);
         jpProcesar = new JPanel();
         btnProcesar = new JButton(btnText);
@@ -63,6 +65,7 @@ public class HeaderPanel extends PanelComponent {
         setMaximumSize(new Dimension(2147483647, 80));
 
         lblTitle.setFont(headerFont);
+        jpTitle.add(lblTitle);
 
         pbProgreso.setIndeterminate(false);
         pbProgreso.setStringPainted(true);
@@ -73,7 +76,7 @@ public class HeaderPanel extends PanelComponent {
 
     @Override
     protected void addComponents() {
-        add(lblTitle);
+        add(jpTitle);
         add(jpProcesar);
     }
 

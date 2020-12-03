@@ -1,4 +1,4 @@
-package main.java.movieRating.views;
+package main.java.movieRating.views.uidesigner;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -48,7 +48,8 @@ public class TableComponent {
         tbHeader = tbMovies.getTableHeader();
         tbHeader.setReorderingAllowed(false);
         tbModel.setColumnIdentifiers(columns);
-        tbMovies.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
+        tbMovies.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         TableColumnModel columnModel = tbHeader.getColumnModel();
         columnModel.getColumn(0).setMaxWidth(60);
@@ -88,6 +89,7 @@ public class TableComponent {
         jpTable.setBorder(BorderFactory.createTitledBorder(null, "Películas", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
         jsTbPane = new JScrollPane();
         jsTbPane.setHorizontalScrollBarPolicy(31);
+        jsTbPane.setVisible(true);
         jpTable.add(jsTbPane, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(400, -1), new Dimension(-1, 150), 1, false));
         jsTbPane.setViewportView(tbMovies);
     }

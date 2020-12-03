@@ -1,4 +1,4 @@
-package main.java.movieRating.views;
+package main.java.movieRating.views.uidesigner;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
