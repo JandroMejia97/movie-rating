@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/movieRating/src"/>
+	<classpathentry kind="src" path="/movieRating/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/com.guicedee.services:jfreechart:1.0.19.13-jre8"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

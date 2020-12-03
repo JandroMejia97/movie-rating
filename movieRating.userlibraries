@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="com.guicedee.services:jfreechart:1.0.19.13-jre8">
+    <archive path="C:/Users/Alejandro Mejía/OneDrive/Documents/UNLP/2020/Semestre II/TdL2/TP3/lib/jfreechart-1.0.19.13-jre8.jar" />
+    <archive path="C:/Users/Alejandro Mejía/OneDrive/Documents/UNLP/2020/Semestre II/TdL2/TP3/lib/jakarta.servlet-api-1.0.19.13-jre8.jar" />
+  </library>
+</eclipse-userlibraries>
+
