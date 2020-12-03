@@ -7,7 +7,7 @@ import main.java.movieRating.repository.MovieRepository;
 import main.java.movieRating.repository.RatingRepository;
 import main.java.movieRating.utils.comparators.MovieRatingQuantityDescComparator;
 import main.java.movieRating.utils.enums.OptionType;
-import main.java.movieRating.views.MainWindow;
+import main.java.movieRating.views.uidesigner.MainWindow;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

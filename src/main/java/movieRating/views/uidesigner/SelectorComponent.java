@@ -1,4 +1,4 @@
-package main.java.movieRating.views;
+package main.java.movieRating.views.uidesigner;
 
 import main.java.movieRating.utils.enums.OptionType;
 

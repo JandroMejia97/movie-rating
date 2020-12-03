@@ -1,4 +1,4 @@
-package main.java.movieRating.views;
+package main.java.movieRating.views.uidesigner;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
