@@ -1,7 +1,7 @@
 # Movie Rating
 Se cuenta con un conjunto de datos referente a películas provisto por GroupLens, es un conjunto relativamente pequeño para realizar pruebas, contiene alrededor de 100,000 votos (ratings) aplicados a 9,000 películas y de 600 usuarios (actualizado al 09/2018). El objetivo es generar una interfaz gráfica que permita ver de manera amigable toda esta información.
 
-<img style="text-align:center;" src="https://bn02pap001files.storage.live.com/y4mHpmR-dGH7Lw_71EWC8BBL17xPEgb6gEu2idM-aW-PbUVb2Z4jFkrR5tvHD9g4ePtEMut89Pg4o21Hz23Pb2CrNQeVkYh7tQoPlXS_4U7PSai9qHhh2DTLTXJHhX7RAViXH1ttYk65cBn_EogBSbWn9uyU5-qTXuhstC4rwNo3x4FiEH2p8AfzzX7PZcQHHdV?width=610&height=486&cropmode=none" width="610" height="486" />
+<img style="text-align:center;" src="https://bn02pap001files.storage.live.com/y4mBx984zwjipr7ztAyKZSfIsf1hZuY4KLNSdt30VHa9QdTHIr98x7tNT04aZpoGYk2NffsMQ35OEAUzV_eBFaBt9bPImFBzbsuQ75j5oQzmUkBM54RRLtIvwa6ymE03hxHHXYAcbzNwhm14OKyAwEBoIgq32bUSZejwebIolq-gXnwwr3xUWhSQSsYLzLNaKVr?width=610&height=484&cropmode=none" width="610" height="484" />
 
 A continuación se detalla cada uno de los ítems indicados en el gráfico.
 
@@ -30,4 +30,4 @@ Se sugiere que analice el problema y organice la información que almacenará en
 
 A continuación se presenta el diagrama UML de la solución [planteada](https://1drv.ms/u/s!ArdZQlTovHwonb0t3VZBhio8xUVxUA).
 
-<img src="https://bn02pap001files.storage.live.com/y4m6grNdYlB94BooDgYrIu74uqea3wOInLvnX_Y7rASXgX9cAzoeYSQL3zOb9nXmw1XliNcwkldMK2EUpf_TLBUgmFfNHVL0RKm1sIn4-JgJd1Yqaeq65BO3eOs1k1kASGXdkft-1s-8uRmL6Z2ZkRwb6q4C4xVDqiNx7VJSx3fnlvy2hgKAqsNReFBF5xM4KS1?width=1024&height=503&cropmode=none" width="1024" height="503" />
+<img src="https://bn02pap001files.storage.live.com/y4ms9MO0k34pYDJJz0NF5fL93ycANnfNnWlqiGSkMO4OgEDj5w2XxC2UCdkmw3uXoCOD_zOQQd2PnyUE9atZvpdKmtUWLfmOyQCSpt3fkEPkZvZfuJQK0rtW7iYyQSkil-jucSOxc7lxR8nia6FF3dLMVD4vUiB2AkDTWvKMvPJYusRj8n8bD4Yd5IZIu2EbXgR?width=1024&height=503&cropmode=none" width="1024" height="503" />
