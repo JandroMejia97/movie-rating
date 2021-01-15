@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ManualMainController {
+public class ManualMainController implements Runnable {
     private CSVFileReaderObserver fileReaderObserver;
     private MainFrame mainFrame;
     private MovieRepository movieRepository;
@@ -40,21 +40,26 @@ public class ManualMainController {
         addBtnListener();
     }
 
+    @Override
+    public void run() {
+        try {
+            loadMovieData();
+            loadRatingData();
+        } catch (IOException error) {
+            JOptionPane.showMessageDialog(mainFrame, errorReadingMessage + "\n" + error.getMessage());
+        }
+        setCantLabels();
+        paintData(OptionType.TODOS.getValue());
+        mainFrame.setCursor(Cursor.getDefaultCursor());
+    }
+
     private void addBtnListener() {
         mainFrame.addActionListenerToButton(e -> {
             enableUIWindow();
             JOptionPane.showMessageDialog(mainFrame, readingMessage);
-            try {
-                loadMovieData();
-                loadRatingData();
-            } catch (IOException error) {
-                JOptionPane.showMessageDialog(mainFrame, errorReadingMessage + "\n" + error.getMessage());
-            }
+            (new Thread(this)).start();
             addSelectListener();
             addSelectRowListener();
-            setCantLabels();
-            paintData(OptionType.TODOS.getValue());
-            mainFrame.setCursor(Cursor.getDefaultCursor());
         });
     }
 
@@ -178,4 +183,5 @@ public class ManualMainController {
     public static void main(String[] args) {
         new ManualMainController();
     }
+
 }
